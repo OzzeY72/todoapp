@@ -1,5 +1,7 @@
 .Task {
-   background-color:aqua; 
+    --task-bgcolor: aqua;
+    --task-button-color: #8a6207;
+    background-color:var(--task-bgcolor); 
    width: 70%;
    display: flex;
    align-items: center;
@@ -8,18 +10,27 @@
    border: 1px solid black;
    margin-bottom: 20px;
 }
-.CheckBox{
+.ContentText{
+    font-size: 40px;
+    background-color: var(--task-bgcolor);
+    border: 0;
+    width: 70%;
+    text-align: left;
+}
+.ContentText:focus{
+    outline: none;
+}
+.CheckBox, .Task button{
     width: 40px;
     height: 40px;
 }
-button{
-    width: 40px;
-    height: 40px;
-    background-color: aqua;
+.Task button{
+    background-color: var(--task-bgcolor);
     font-size: 28px;
-    color: #8a6207;
+    color: var(--task-button-color);
     border: 0;
 }
-.TextContainer{
-    width: 70%;
+.completed{
+    --task-bgcolor:#014f4f; 
+    --task-button-color: #e2ff8c;
 }
