@@ -1,0 +1,25 @@
+.Task {
+   background-color:aqua; 
+   width: 70%;
+   display: flex;
+   align-items: center;
+   padding: 0 20px 0 20px;
+   justify-content: space-between;
+   border: 1px solid black;
+   margin-bottom: 20px;
+}
+.CheckBox{
+    width: 40px;
+    height: 40px;
+}
+button{
+    width: 40px;
+    height: 40px;
+    background-color: aqua;
+    font-size: 28px;
+    color: #8a6207;
+    border: 0;
+}
+.TextContainer{
+    width: 70%;
+}
