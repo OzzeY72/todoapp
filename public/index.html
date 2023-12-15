@@ -38,6 +38,10 @@
 
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
+
+      <Task completed={tasks[0].completed} order={tasks[0].order} content={tasks[0].content} onDelete={()=>DeleteHandler(0)} onTextInput={()=>{InputHandler(0)}} onChecked={()=>{CheckedHandler(0)}} index={tasks[0].index} custRef={tasks[0].custRef}/>
+      <Task completed={tasks[1].completed} order={tasks[1].order} content={tasks[1].content} onDelete={()=>DeleteHandler(1)} onTextInput={()=>{InputHandler(1)}} onChecked={()=>{CheckedHandler(1)}} index={tasks[1].index} custRef={tasks[1].custRef}/>
     -->
+    
   </body>
 </html>
