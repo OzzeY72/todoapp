@@ -19,7 +19,7 @@ function Task(props:ITaskProps) {
   const [readonly, setReadonly] = useState(false);
 
   return (
-    <div className={props.completed ? "Task completed" : "Task incompleted"} style={{order: props.order}}>
+    <div className={props.completed ? "Task completed" : "Task incompleted"} style={{order: props.completed ? -1 : props.order}}>
       <input className="CheckBox" onChange={props.onChecked} type="checkbox" defaultChecked={props.completed}/>  
       <input  ref={props.custRef} className='ContentText' value={props.content} onChange={props.onTextInput} onBlur={()=>setReadonly(true)} readOnly={readonly}></input>
       <button onClick={()=>setReadonly(false)} className="EditButton"><FontAwesomeIcon icon={faPencil} /></button>
