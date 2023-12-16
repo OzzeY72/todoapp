@@ -7,8 +7,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlus } from '@fortawesome/free-solid-svg-icons'
 
 interface TaskProps{
-  index: number;
-  order: number;
   content: string;
   completed: boolean;
   custRef: RefObject<HTMLInputElement>;
@@ -25,7 +23,8 @@ class App extends React.Component<{},IAppState> {
     };
   }
   render() {
-    const taskElements = this.state.tasks.map((task)=><Task completed={task.completed} order={task.order} content={task.content} onDelete={()=>this.DeleteHandler(task.index)} onTextInput={()=>{this.InputHandler(task.index)}} onChecked={()=>{this.CheckedHandler(task.index)}} index={task.index} custRef={task.custRef}/>);
+    const taskElements = this.state.tasks.map((task,index)=><Task completed={task.completed} order={index} content={task.content} onDelete={()=>this.DeleteHandler(index)} onTextInput={()=>{this.InputHandler(index)}} onChecked={()=>{this.CheckedHandler(index)}} custRef={task.custRef}/>);
+    console.log(this.state.tasks);
     return (
       <div className="App">
         {taskElements}
@@ -37,7 +36,7 @@ class App extends React.Component<{},IAppState> {
   }
   CreateHandler () {
     const nextTasks = this.state.tasks.slice();
-    nextTasks.push({order:nextTasks.length,content:"",completed: false,custRef:React.createRef(),index:nextTasks.length});
+    nextTasks.push({content:"",completed: false,custRef:React.createRef()});
     this.setState({tasks:nextTasks});
   }
   DeleteHandler(i:number) {
